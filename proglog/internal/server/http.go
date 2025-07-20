@@ -42,7 +42,7 @@ func (s *httpServer) handleProduce(w http.ResponseWriter, r *http.Request) {
 
 }
 func (s *httpServer) handleConsume(w http.ResponseWriter, r *http.Request) {
-	req:=ConsumeRequest{}
+	req := ConsumeRequest{}
 	err := json.NewDecoder(r.Body).Decode(&req)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
